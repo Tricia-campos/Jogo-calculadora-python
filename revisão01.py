@@ -1,5 +1,3 @@
-# Jogo de adivinhação
-
 import random
 def advinhacao():
     alvo = random.randint(0, 100)
@@ -21,9 +19,9 @@ def advinhacao():
                     else:
                         print("tente um número maior: ")
 
-            numero_tentativas = numero_tentativas -1
+            numero_tentativas -=1
 
-        except:
+        except ValueError:
             print("Digite um número inteiro. ")
 
         if numero_tentativas == 0:
@@ -31,7 +29,7 @@ def advinhacao():
 
 
 
-def conseguiu():
+def jogo():
     vitorias = 0
     derrotas = 0
 
@@ -42,12 +40,9 @@ def conseguiu():
         else:
             derrotas += 1
         print(f"vitorias: {vitorias} / derrotas: {derrotas}")
-        break
+        jogar_denovo = str(input(" Deseja jogar mais uma vez? (s/n): "))
+        if jogar_denovo != 's':
+                print("Obrigado por jogar!")
 
 
-    jogar_denovo = str(input(" Deseja jogar mais uma vez? (s/n): ")).strip().lower()
-    if jogar_denovo != 's':
-            print("Obrigado por jogar!")
-
-
-conseguiu()
+jogo()
