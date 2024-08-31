@@ -1,10 +1,10 @@
-def calcular_imc(peso, altura):
+
+
+def calcular_imc():
+    peso = float(input("Digite aqui seu peso: "))
+    altura = float(input("Digite aqui sua altura: "))
     imc = peso / (altura ** 2)
     return imc
 
-###Exemplo de uso da função:
-peso = 70  # Peso em quilogramas
-altura = 1.75  # Altura em metros
-
-imc = calcular_imc(peso, altura)
-imc
+imc = calcular_imc()
+print(f"O seu imc é de: {imc:.2f}")
